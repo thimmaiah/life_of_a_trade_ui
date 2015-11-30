@@ -1,0 +1,19 @@
+<!-- top navbar-->
+<div ng-include="'app/templates/views/partials/top-navbar.html'"></div>
+<!-- sidebar-->
+<aside ng-include="'app/templates/views/partials/sidebar.html'" ng-controller="SidebarController" class="aside"></aside>
+<!-- Main section-->
+<section>
+		
+	<div flash-alert active-class="alert in" class="fade" duration="5000">
+		<button type="button" class="close" ng-click="hide()">
+			&times;
+		</button>
+		<span class="alert-message">{{flash.message}}</span>
+	</div>
+		
+	   <!-- Page content-->
+   <div ui-view="" autoscroll="false" ng-class="app.viewAnimation" class="content-wrapper"></div>
+</section>
+<!-- Page footer-->
+<footer ng-include="'app/templates/views/partials/footer.html'"></footer>

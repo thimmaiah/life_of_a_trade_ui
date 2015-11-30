@@ -1,0 +1,3 @@
+window.ParsleyConfig = {
+	trigger: "blur"
+};

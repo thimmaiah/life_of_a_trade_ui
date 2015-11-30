@@ -1,0 +1,33 @@
+<div class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+         <a href="#">
+            <img src="app/logo.png" alt="Image" class="block-center img-rounded" />
+         </a>
+      </div>
+      <div class="panel-body">
+         <p class="text-center pv">SIGNUP TO GET INSTANT ACCESS.</p>
+         <form role="form" class="mb-lg">
+         	
+         	<div ng-include="'app/templates/users/fields.html'"></div>
+         	
+            <div class="clearfix">
+               <div class="checkbox c-checkbox pull-left mt0">
+                  <label>
+                     <input type="checkbox" value="" />
+                     <span class="fa fa-check"></span>I agree with the <a href="#">terms</a>
+                  </label>
+               </div>
+            </div>
+            <button type="button" ng-click="register()" class="btn btn-block btn-primary mt-lg">Create account</button>
+         </form>
+         <p class="pt-lg text-center">Have an account?</p><a ui-sref="app.login" class="btn btn-block btn-default">Login</a>
+      </div>
+   </div>
+   <!-- END panel-->
+   <div class="p-lg text-center">
+      <span>&copy; {{app.year}} - {{ app.name }}
+         <br/>{{app.description}}</span>
+   </div>
+</div>

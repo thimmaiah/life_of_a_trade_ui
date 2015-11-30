@@ -1,0 +1,190 @@
+<h3>
+   <!-- START Language list-->
+   <div class="pull-right">
+      <div dropdown="" is-open="language.listIsOpen" class="btn-group">
+         <button type="button" class="btn btn-default dropdown-toggle">{{language.selected}}
+            <span class="caret"></span>
+         </button>
+         <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+            <li ng-repeat="(localeId, langName) in language.available"><a ng-click="language.set(localeId, $event)" href="#">{{langName}}</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <!-- END Language list    -->
+   Dashboard
+   <small>{{ 'dashboard.WELCOME' | translate:{ appName: app.name } }} !</small>
+</h3>
+<!-- START widgets box-->
+<div class="row">
+	<div ng-include="'app/templates/views/partials/color_widgets.html'"></div>	   
+</div>
+
+
+<!-- END widgets box-->
+<div class="row">
+   <!-- START dashboard main content-->
+   <div class="col-lg-9">
+      
+      <!-- div class="row">
+         <div class="col-lg-12">         	
+         	<div ng-include="'app/templates/views/partials/stats_widget.html'"></div>
+         	<div ng-include="'app/templates/views/partials/weather.html'"></div>            
+         </div>
+      </div -->
+
+
+      <div class="row">
+         <div class="col-lg-4">
+            <div ng-include="'app/templates/views/partials/activity.html'"></div>
+         </div>
+         <div class="col-lg-8">
+         	
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <div class="pull-right label label-danger">5</div>
+                  <div class="pull-right label label-success">12</div>
+                  <div class="panel-title">Team messages</div>
+               </div>
+               <!-- START list group-->
+               <scrollable height="180" class="list-group">
+                  <!-- START list group item-->
+                  <a href="#" class="list-group-item">
+                     <div class="media">
+                        <div class="pull-left">
+                           <img src="app/user/02.jpg" alt="Image" class="media-object img-circle thumb32" />
+                        </div>
+                        <div class="media-body clearfix">
+                           <small class="pull-right">2h</small>
+                           <strong class="media-heading text-primary">
+                              <span class="circle circle-success circle-lg text-left"></span>Catherine Ellis</strong>
+                           <p class="mb-sm">
+                              <small>Cras sit amet nibh libero, in gravida nulla. Nulla...</small>
+                           </p>
+                        </div>
+                     </div>
+                  </a>
+                  <!-- END list group item-->
+                  <!-- START list group item-->
+                  <a href="#" class="list-group-item">
+                     <div class="media">
+                        <div class="pull-left">
+                           <img src="app/user/03.jpg" alt="Image" class="media-object img-circle thumb32" />
+                        </div>
+                        <div class="media-body clearfix">
+                           <small class="pull-right">3h</small>
+                           <strong class="media-heading text-primary">
+                              <span class="circle circle-success circle-lg text-left"></span>Jessica Silva</strong>
+                           <p class="mb-sm">
+                              <small>Cras sit amet nibh libero, in gravida nulla. Nulla facilisi.</small>
+                           </p>
+                        </div>
+                     </div>
+                  </a>
+                  <!-- END list group item-->
+                  <!-- START list group item-->
+                  <a href="#" class="list-group-item">
+                     <div class="media">
+                        <div class="pull-left">
+                           <img src="app/user/09.jpg" alt="Image" class="media-object img-circle thumb32" />
+                        </div>
+                        <div class="media-body clearfix">
+                           <small class="pull-right">4h</small>
+                           <strong class="media-heading text-primary">
+                              <span class="circle circle-danger circle-lg text-left"></span>Jessie Wells</strong>
+                           <p class="mb-sm">
+                              <small>Cras sit amet nibh libero, in gravida nulla. Nulla...</small>
+                           </p>
+                        </div>
+                     </div>
+                  </a>
+                  <!-- END list group item-->
+                  <!-- START list group item-->
+                  <a href="#" class="list-group-item">
+                     <div class="media">
+                        <div class="pull-left">
+                           <img src="app/user/12.jpg" alt="Image" class="media-object img-circle thumb32" />
+                        </div>
+                        <div class="media-body clearfix">
+                           <small class="pull-right">1d</small>
+                           <strong class="media-heading text-primary">
+                              <span class="circle circle-danger circle-lg text-left"></span>Rosa Burke</strong>
+                           <p class="mb-sm">
+                              <small>Cras sit amet nibh libero, in gravida nulla. Nulla...</small>
+                           </p>
+                        </div>
+                     </div>
+                  </a>
+                  <!-- END list group item-->
+                  <!-- START list group item-->
+                  <a href="#" class="list-group-item">
+                     <div class="media">
+                        <div class="pull-left">
+                           <img src="app/user/10.jpg" alt="Image" class="media-object img-circle thumb32" />
+                        </div>
+                        <div class="media-body clearfix">
+                           <small class="pull-right">2d</small>
+                           <strong class="media-heading text-primary">
+                              <span class="circle circle-danger circle-lg text-left"></span>Michelle Lane</strong>
+                           <p class="mb-sm">
+                              <small>Mauris eleifend, libero nec cursus lacinia...</small>
+                           </p>
+                        </div>
+                     </div>
+                  </a>
+                  <!-- END list group item-->
+               </scrollable>
+               <!-- END list group-->
+               <!-- START panel footer-->
+               <div class="panel-footer clearfix">
+                  <div class="input-group">
+                     <input type="text" placeholder="Search message .." class="form-control input-sm" />
+                     <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-search"></i>
+                        </button>
+                     </span>
+                  </div>
+               </div>
+               <!-- END panel-footer-->
+            </div>
+         </div>
+      </div>
+   
+   
+   </div>
+   
+   <!-- END dashboard main content-->
+   <!-- START dashboard sidebar-->
+   <aside class="col-lg-3">
+      <!-- START loader widget-->
+      <div class="panel panel-default">
+         <div class="panel-body">
+            <a href="#" class="text-muted pull-right">
+               <em class="fa fa-arrow-right"></em>
+            </a>
+            <div class="text-info">Average Monthly Applications</div>
+            <canvas classyloader="" data-percentage="70" data-speed="20" data-font-size="40px" data-diameter="70" data-line-color="{{colorByName('info')}}" data-remaining-line-color="rgba(200,200,200,0.4)" data-line-width="10"
+            data-rounded-line="true" class="center-block"></canvas>
+            <div sparkline="" data-bar-color="{{colorByName('info')}}" data-height="30" data-bar-width="5" data-bar-spacing="2" class="text-center">
+               5,4,8,7,8,5,4,6,5,5,9,4,6,3,4,7,5,4,7</div>
+         </div>
+         <div class="panel-footer">
+            <p class="text-muted">
+               <em class="fa fa-upload fa-fw"></em>
+               <span>This Month</span>
+               <span class="text-dark">1000 Applications</span>
+            </p>
+         </div>
+      </div>
+      <!-- END loader widget-->
+      
+   </aside>
+   <!-- END dashboard sidebar-->
+   
+   
+</div>
+
+		<div class="row">
+			<div ng-include="'app/templates/views/partials/color_stats_widget.html'"></div>
+		</div>
+   

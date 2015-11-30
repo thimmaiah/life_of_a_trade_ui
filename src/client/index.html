@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide { display: none!important; }
+    </style>
+    <title ng-bind="title">life_of_a_trade_ui</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <base href="/">
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="/bower_components/ng-table/ng-table.css" />
+    <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="/bower_components/AngularJS-Toaster/toaster.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <link rel="stylesheet" href="/.tmp/app.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed }">
+
+   	<div data-ui-view="" data-autoscroll="false" data-ng-class="mainViewAnimation" class="wrapper"></div>
+   	<toaster-container></toaster-container>
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/ng-table/ng-table.js"></script>
+    <script src="/bower_components/api-check/dist/apiCheck.js"></script>
+    <script src="/bower_components/angular-formly/dist/formly.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+    <script src="/bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="/bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+    <script src="/bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="/bower_components/angular-translate/angular-translate.js"></script>
+    <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="/bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="/bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+    <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js-->
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/src/client/app/blocks/router/router.module.js"></script>
+    <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.module.js"></script>
+    <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/user/user.client.module.js"></script>
+    <script src="/src/client/app/vendor/vendor.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.js"></script>
+    <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/core/config.js"></script>
+    <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/dataservice.js"></script>
+    <script src="/src/client/app/core/directives/ng-really-click.directive.js"></script>
+    <script src="/src/client/app/core/services/table.settings.service.js"></script>
+    <script src="/src/client/app/core/user-block.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.route.js"></script>
+    <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
+    <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
+    <script src="/src/client/app/layout/shell.controller.js"></script>
+    <script src="/src/client/app/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/user/config/user.client.routes.js"></script>
+    <script src="/src/client/app/user/controllers/user.client.controller.js"></script>
+    <script src="/src/client/app/user/services/user.client.service.js"></script>
+    <script src="/src/client/app/user/services/user.form.client.service.js"></script>
+    <script src="/src/client/app/vendor/config.js"></script>
+    <script src="/src/client/app/vendor/controllers/calendar.js"></script>
+    <script src="/src/client/app/vendor/controllers/datatable.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-alerts.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-buttons.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-carousel.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-datepicker.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-pagination.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-popover.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-progress.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-rating.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-timepicker.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-toaster.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-tooltip.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-typeahead.js"></script>
+    <script src="/src/client/app/vendor/controllers/demo-upload.js"></script>
+    <script src="/src/client/app/vendor/controllers/flot-chart.js"></script>
+    <script src="/src/client/app/vendor/controllers/main.js"></script>
+    <script src="/src/client/app/vendor/controllers/modals-gmap.js"></script>
+    <script src="/src/client/app/vendor/controllers/modals.js"></script>
+    <script src="/src/client/app/vendor/controllers/notifications.js"></script>
+    <script src="/src/client/app/vendor/controllers/portlet.js"></script>
+    <script src="/src/client/app/vendor/controllers/sidebar-menu.js"></script>
+    <script src="/src/client/app/vendor/controllers/todo.js"></script>
+    <script src="/src/client/app/vendor/controllers/upload.js"></script>
+    <script src="/src/client/app/vendor/controllers/user-block.js"></script>
+    <script src="/src/client/app/vendor/controllers/utils.js"></script>
+    <script src="/src/client/app/vendor/controllers/vector-maps.js"></script>
+    <script src="/src/client/app/vendor/directives/anchor.js"></script>
+    <script src="/src/client/app/vendor/directives/animate-enabled.js"></script>
+    <script src="/src/client/app/vendor/directives/animateOnChange.js"></script>
+    <script src="/src/client/app/vendor/directives/chosen-select.js"></script>
+    <script src="/src/client/app/vendor/directives/classy-loader.js"></script>
+    <script src="/src/client/app/vendor/directives/clear-storage.js"></script>
+    <script src="/src/client/app/vendor/directives/datepicker.js"></script>
+    <script src="/src/client/app/vendor/directives/filestyle.js"></script>
+    <script src="/src/client/app/vendor/directives/flatdoc.js"></script>
+    <script src="/src/client/app/vendor/directives/form-wizard.js"></script>
+    <script src="/src/client/app/vendor/directives/fullscreen.js"></script>
+    <script src="/src/client/app/vendor/directives/gmap.js"></script>
+    <script src="/src/client/app/vendor/directives/load-css.js"></script>
+    <script src="/src/client/app/vendor/directives/markdownarea.js"></script>
+    <script src="/src/client/app/vendor/directives/masked.js"></script>
+    <script src="/src/client/app/vendor/directives/navbar-search.js"></script>
+    <script src="/src/client/app/vendor/directives/notify.js"></script>
+    <script src="/src/client/app/vendor/directives/now.js"></script>
+    <script src="/src/client/app/vendor/directives/panel-tools.js"></script>
+    <script src="/src/client/app/vendor/directives/play-animations.js"></script>
+    <script src="/src/client/app/vendor/directives/scroll.js"></script>
+    <script src="/src/client/app/vendor/directives/sidebar.js"></script>
+    <script src="/src/client/app/vendor/directives/skycons.js"></script>
+    <script src="/src/client/app/vendor/directives/sparklines.js"></script>
+    <script src="/src/client/app/vendor/directives/table-checkall.js"></script>
+    <script src="/src/client/app/vendor/directives/tags-input.js"></script>
+    <script src="/src/client/app/vendor/directives/toggle-state.js"></script>
+    <script src="/src/client/app/vendor/directives/ui-slider.js"></script>
+    <script src="/src/client/app/vendor/directives/validate-form.js"></script>
+    <script src="/src/client/app/vendor/directives/vector-map.js"></script>
+    <script src="/src/client/app/vendor/services/browser.js"></script>
+    <script src="/src/client/app/vendor/services/colors.js"></script>
+    <script src="/src/client/app/vendor/services/google-map.js"></script>
+    <script src="/src/client/app/vendor/services/modal.js"></script>
+    <script src="/src/client/app/vendor/services/nav-search.js"></script>
+    <script src="/src/client/app/vendor/services/toggle-state.js"></script>
+    <script src="/src/client/app/vendor/services/vector-map.js"></script>
+    <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
+    <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</body>
+
+</html>
