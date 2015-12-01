@@ -37,26 +37,44 @@
                 },
                 {
                     key: 'asset_class',
-                    type: 'input',
+                    type: 'select',
                     templateOptions: {
                         label: 'Asset Class:',
-                        disabled: disabled
+                        disabled: disabled,
+                        options: [
+                          {name: 'Stock', value: 'Stock'},
+                          {name: 'Bond', value: 'Bond'},
+                          {name: 'Derivative', value: 'Derivative'}
+                        ]
                     }
                 },
                 {
                     key: 'region',
-                    type: 'input',
+                    type: 'select',
                     templateOptions: {
                         label: 'Region:',
-                        disabled: disabled
+                        disabled: disabled,
+                        options: [
+                          {name: 'US', value: 'US'},
+                          {name: 'EU', value: 'EU'},
+                          {name: 'APAC', value: 'APAC'},
+                          {name: 'EMEA', value: 'EMEA'}
+                        ]
                     }
                 },
                 {
                     key: 'sector',
-                    type: 'input',
+                    type: 'select',
                     templateOptions: {
                         label: 'Sector:',
-                        disabled: disabled
+                        disabled: disabled,
+                        options: [
+                          {name: 'Auto', value: 'Auto'},
+                          {name: 'Pharma', value: 'Pharma'},
+                          {name: 'Manufacturing', value: 'Manufacturing'},
+                          {name: 'Construction', value: 'Construction'},
+                          {name: 'Technology', value: 'Technology'}
+                        ]
                     }
                 },
                 {
