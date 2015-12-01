@@ -88,5 +88,44 @@
             //logger.info('Activated User View');
         }
     }
+    
+    
+    angular.module('app.user').controller('LoginController', LoginController);
+
+	LoginController.$inject = [ 'logger', '$stateParams', '$location', '$state', 'User', '$auth', '$scope'];
+	/* @ngInject */
+	function LoginController(logger, $stateParams, $location, $state, User, $auth, $scope) {
+
+		var vm = this;
+		vm.user = {
+            email: 'shayne_brown@schillerhaag.biz',
+            password: 'shayne_brown@schillerhaag.biz'
+        };
+		
+        var config = {
+            headers: {
+                'X-HTTP-Method-Override': 'POST'
+            }
+        };
+
+               
+        vm.login = function() {
+	        $auth.submitLogin(vm.user)
+	          .then(function(resp) {
+	        	  console.log(resp); // => {id: 1, ect: '...'}
+	        	  $state.go("app.listUser");
+	          })
+	          .catch(function(resp) {
+	            // handle error response
+	          });
+	      };
+
+       	activate();
+
+		function activate() {
+			// logger.info('Activated User View');
+		}
+	}
+
 
 })();

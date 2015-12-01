@@ -7,9 +7,9 @@
         .module('app.core')
         .factory('TableSettings', factory);
 
-    factory.$inject = ['ngTableParams'];
+    factory.$inject = ['ngTableParams', 'logger'];
     /* @ngInject */
-    function factory(ngTableParams) {
+    function factory(ngTableParams, logger) {
 
         var previousEntity;
 
@@ -23,9 +23,9 @@
                     tableParams.$params.filter = {};
                 }
 
-                Entity.get(requestParams, function(response) {
+                Entity.query(requestParams, function(response) {
                     params.total(response.total);
-                    $defer.resolve(response.results);
+                    $defer.resolve(response);
                 });
             };
         };

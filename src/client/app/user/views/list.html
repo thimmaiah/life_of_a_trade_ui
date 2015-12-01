@@ -14,8 +14,10 @@
 
       <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
           <tr ng-repeat="user in $data">
-              <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">{{user.name}}</td>
-              <td data-title="'Address'" sortable="'address'" filter="{'address': 'text'}">{{user.address}}</td>
+              <td data-title="'First Name'" sortable="'first_name'" filter="{ 'first_name': 'text' }">{{user.first_name}}</td>
+              <td data-title="'Last Name'" sortable="'last_name'" filter="{ 'last_name': 'text' }">{{user.last_name}}</td>
+              <td data-title="'Email'" sortable="'email'" filter="{ 'email': 'text' }">{{user.email}}</td>
+              <td data-title="'Role'" sortable="'role'" filter="{'role': 'text'}">{{user.role}}</td>
               <td>
                  <div class="table-actions">
                       <a class="btn btn-default" title="View" href="/user/{{user.id}}">

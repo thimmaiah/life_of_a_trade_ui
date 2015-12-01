@@ -7,7 +7,13 @@
 					[ 'ngAnimate', 'ngSanitize', 'blocks.exception',
 							'blocks.logger', 'blocks.router', 'ui.router',
 							'ngplus', 'ngResource', 'ui.bootstrap', 'ngTable',
-							'formly', 'formlyBootstrap' ])
+							'formly', 'formlyBootstrap', 'ng-token-auth' ])
+			
+			.config(function($authProvider) {
+				    $authProvider.configure({
+					apiUrl : 'http://localhost:3000'
+				})
+			})
 			.run(
 					[
 							"$rootScope",

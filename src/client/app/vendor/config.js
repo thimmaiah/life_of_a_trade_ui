@@ -42,13 +42,16 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         url: '/login',
         title: 'Login',
         templateUrl: basepath('login.html'),
-        controller: 'LoginController'
+        controller: 'LoginController',
+        controllerAs : 'vm'
+        	
     })    
     .state('app.register', {
         url: '/register',
         title: 'Register',
         templateUrl: basepath('register.html'),
-        controller: 'LoginController'
+        controller: 'LoginController',
+        controllerAs: 'vm'
     })
     .state('app.recover', {
         url: '/recover',

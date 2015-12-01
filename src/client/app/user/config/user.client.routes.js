@@ -14,7 +14,7 @@
     function getStates() {
         return [
             {
-                state: 'listUser',
+                state: 'app.listUser',
                 config: {
                     url: '/user',
                     templateUrl: 'app/user/views/list.html',
@@ -28,7 +28,7 @@
                 }
             },
             {
-                state: 'createUser',
+                state: 'app.createUser',
                 config: {
                     url: '/user/create',
                     templateUrl: 'app/user/views/create.html',
@@ -38,7 +38,7 @@
                 }
             },
             {
-                state: 'viewUser',
+                state: 'app.viewUser',
                 config: {
                     url: '/user/:userId',
                     templateUrl: 'app/user/views/view.html',
@@ -48,7 +48,7 @@
                 }
             },
             {
-                state: 'editUser',
+                state: 'app.editUser',
                 config: {
                     url: '/user/:userId/edit',
                     templateUrl: 'app/user/views/edit.html',

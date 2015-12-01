@@ -10,7 +10,8 @@
     function User($resource, API_BASE_URL) {
 
         var params = {
-            userId: '@id'
+            userId: '@id',
+            format: 'json'
         };
 
         var actions = {
@@ -19,7 +20,7 @@
             }
         };
 
-        var API_URL = API_BASE_URL + '/user/:userId';
+        var API_URL = API_BASE_URL + '/users/:userId';
 
         return $resource(API_URL, params, actions);
 
