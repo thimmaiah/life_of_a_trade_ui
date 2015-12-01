@@ -1,0 +1,45 @@
+<section class="mainbar">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Trade List
+    </div>
+    <div class="panel-body">
+
+      <div class="pull-right">
+        <a type="button" class="btn btn-success" href="/trade/create">
+          <i class="glyphicon glyphicon-open"></i> New Trade
+        </a>
+      </div>
+
+      <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
+          <tr ng-repeat="trade in $data">
+              <td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{trade.id}}</td>
+              <td data-title="'Quantity'" sortable="'quantity'" filter="{'quantity': 'text'}">{{trade.quantity}}</td>
+              <td data-title="'Price'" sortable="'price'" filter="{'price': 'text'}">{{trade.price}}</td>
+              <td data-title="'Ticker'" sortable="'security_ticker'" filter="{'security_ticker': 'text'}">{{trade.security_ticker}}</td>
+              <td data-title="'Customer'" sortable="'customer_name'" filter="{'customer_name': 'text'}">{{trade.customer_name}}</td>
+              <td data-title="'Buy/Sell'" sortable="'buy_sell'" filter="{'buy_sell': 'text'}">{{trade.buy_sell}}</td>
+              <td data-title="'Trade Date'" sortable="'trade_date'" filter="{'trade_date': 'text'}">{{trade.trade_date}}</td>
+              <td data-title="'Settlement Date'" sortable="'settlement_date'" filter="{'settlement_date': 'text'}">{{trade.settlement_date}}</td>
+              <td data-title="'Team Name'" sortable="'team_name'" filter="{'team_name': 'text'}">{{trade.team_name}}</td>
+              <td>
+                 <div class="table-actions">
+                      <a class="btn btn-default" title="View" href="/trade/{{trade.id}}">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </a>
+                      <a class="btn btn-default" title="Edit" href="/trade/{{trade.id}}/edit">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(trade)" item="trade">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+
+</section>

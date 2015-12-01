@@ -1,0 +1,62 @@
+<div class="form-group">
+
+	<div class="form-group" ng-controller="SecuritiesSearchCtrl as ssc">
+		<label class="control-label"> Security * </label> <input type="text"
+			name="trade[security_id]" ng-model="vm.trade.security_name"
+			class="text_field form-control"
+			placeholder="Search using ticket, name, sector or asset class"
+			typeahead="security.name for security in ssc.search($viewValue)"
+			typeahead-loading="loadingSecurities" required
+			typeahead-min-length="3"
+			typeahead-on-select="vm.selectSecurity($item, $model, $label)">
+		<i ng-show="loadingSecurities" class="glyphicon glyphicon-refresh"></i>
+
+	</div>
+
+
+	<label class="control-label"> Buy/Sell * </label> 
+	<select class="form-control" ng-model="vm.trade.buy_sell" name="trade[buy_sell]">
+		<option value="Buy" label="Buy">Buy</option>
+		<option value="Sell" label="Sell">Sell</option>
+	</select>
+</div>
+
+</div>
+
+
+<label class="control-label"> Quantity * </label>
+<input type="text" name="trade[quantity]" ng-model="vm.trade.quantity"
+	class="text_field form-control" required>
+
+</div>
+<div class="form-group">
+	<label class="control-label"> Price * </label> <input type="text"
+		name="trade[price]" ng-model="vm.trade.price"
+		class="text_field form-control" required>
+
+</div>
+
+<div class="form-group" ng-controller="CustomersSearchCtrl as csc">
+	<label class="control-label"> Customer * </label> <input type="text"
+		name="trade[customer_id]" ng-model="vm.trade.customer_name"
+		class="text_field form-control"
+		placeholder="Search using customer name"
+		typeahead="customer.name for customer in csc.search($viewValue)"
+		typeahead-loading="loadingCustomers" required typeahead-min-length="3"
+		typeahead-on-select="vm.selectCustomer($item, $model, $label)"> <i
+		ng-show="loadingCustomers" class="glyphicon glyphicon-refresh"></i>
+
+</div>
+<div class="form-group">
+	<label class="control-label"> Trade Date * </label> <input type="date"
+		name="trade[trade_date]" ng-model="vm.trade.trade_date"
+		class="date_select form-control" required>
+
+</div>
+<div class="form-group">
+	<label class="control-label"> Settlement Date * </label> <input
+		type="date" name="trade[settlement_date]"
+		ng-model="vm.trade.settlement_date" class="date_select form-control"
+		required>
+
+</div>

@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('app.security')
-        .factory('Security', Security);
+        .module('app.customer')
+        .factory('Customer', Customer);
 
-    Security.$inject = ['$resource', 'API_BASE_URL'];
+    Customer.$inject = ['$resource', 'API_BASE_URL'];
     /* @ngInject */
-    function Security($resource, API_BASE_URL) {
+    function Customer($resource, API_BASE_URL) {
 
         var params = {
-            securityId: '@id',
+            customerId: '@id',
             format: 'json'
         };
 
@@ -19,14 +19,14 @@
                 method: 'PUT'
             },
             search: {
-            	url: API_BASE_URL + "/securities/search",	
+            	url: API_BASE_URL + "/customers/search",	
             	method: "GET",
             	params: {term: '@term'},
             	isArray: true
             }
         };
 
-        var API_URL = API_BASE_URL + '/securities/:securityId';
+        var API_URL = API_BASE_URL + '/customers/:customerId';
 
         return $resource(API_URL, params, actions);
 

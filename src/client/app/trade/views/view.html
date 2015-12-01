@@ -1,0 +1,27 @@
+<section class="mainbar" data-ng-init="vm.toViewTrade()">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+			Trade View
+    </div>
+    <div class="panel-body">
+
+      <div ng-include="'app/trade/views/fields.html'"></div>
+
+      <hr/>
+      <div>
+        <a class="btn btn-success" href="/trade/{{vm.trade.id}}/edit">
+          <i class="glyphicon glyphicon-edit"></i> Edit
+        </a>
+        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.trade">
+          <i class="glyphicon glyphicon-remove-circle"></i> Delete
+        </a>
+        <a class="btn btn-primary" href="/trade">
+          <i class="glyphicon glyphicon-list"></i> List Trades
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
