@@ -7,7 +7,7 @@
     <div class="panel-body">
 
       <div class="pull-right">
-        <a type="button" class="btn btn-success" href="/customer/create">
+        <a type="button" class="btn btn-success" ui-sref="app.createCustomer()">
           <i class="glyphicon glyphicon-open"></i> New Customer
         </a>
       </div>
@@ -20,10 +20,10 @@
               <td data-title="'Account Number'" sortable="'account_number'" filter="{ 'account_number': 'text' }">{{customer.account_number}}</td>
               <td>
                  <div class="table-actions">
-                      <a class="btn btn-default" title="View" href="/customer/{{customer.id}}">
+                      <a class="btn btn-default" title="View" ui-sref="app.viewCustomer({customerId: customer.id})">
                         <span class="glyphicon glyphicon-eye-open"></span>
                       </a>
-                      <a class="btn btn-default" title="Edit" href="/customer/{{customer.id}}/edit">
+                      <a class="btn btn-default" title="Edit" ui-sref="app.editCustomer({customerId: customer.id})">
                         <span class="glyphicon glyphicon-edit"></span>
                       </a>
                       <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(customer)" item="customer">
