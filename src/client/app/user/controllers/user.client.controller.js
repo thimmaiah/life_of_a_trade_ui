@@ -92,9 +92,9 @@
     
     angular.module('app.user').controller('LoginController', LoginController);
 
-	LoginController.$inject = [ 'logger', '$stateParams', '$location', '$state', 'User', '$auth', '$scope'];
+	LoginController.$inject = [ 'logger', '$stateParams', '$location', '$state', 'User', '$auth', '$scope', '$rootScope'];
 	/* @ngInject */
-	function LoginController(logger, $stateParams, $location, $state, User, $auth, $scope) {
+	function LoginController(logger, $stateParams, $location, $state, User, $auth, $scope, $rootScope) {
 
 		var vm = this;
 		vm.user = {
@@ -112,7 +112,20 @@
 	        $auth.submitLogin(vm.user)
 	          .then(function(resp) {
 	        	  console.log(resp); // => {id: 1, ect: '...'}
+	        	  $rootScope.current_user = resp;
 	        	  $state.go("app.listUser");
+	          })
+	          .catch(function(resp) {
+	            // handle error response
+	          });
+	      };
+	      
+	      vm.logout = function() {
+	        $auth.signOut()
+	          .then(function(resp) {
+	        	  console.log(resp); // => {id: 1, ect: '...'}
+	        	  $rootScope.current_user = {};
+	        	  $state.go("app.login");
 	          })
 	          .catch(function(resp) {
 	            // handle error response

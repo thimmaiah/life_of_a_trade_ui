@@ -55,7 +55,7 @@ angular.module('app.vendor').controller('SidebarController', ['$rootScope', '$sc
     
     // This is used to show/hide menu based on user permissions    
     $scope.showMenu = function(item) {
-    	if(item.entity) {
+    	if(item.entity && $rootScope.current_user.email) {
     		if(item.permissions) {
     			req_perms = item.permissions; 
     		} else {

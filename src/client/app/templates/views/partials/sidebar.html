@@ -44,14 +44,14 @@
          </li>
          
           	
-         <li ng-hide="current_user">         
+         <li ng-hide="current_user.email">         
          	<a ui-sref="app.login" title="Login" class="ng-scope">
 			<em ng-hide="inSubmenu" class="icon-key"></em>
 			<!-- ngIf: item.alert -->
 			<span class="ng-scope ng-binding">Login</span></a>
 		 </li>
 		 
-		 <li ng-hide="current_user">         
+		 <li ng-hide="current_user.email">         
          	<a ui-sref="app.register" title="Register" class="ng-scope">
 			<em ng-hide="inSubmenu" class="icon-user"></em>
 			<!-- ngIf: item.alert -->

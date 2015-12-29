@@ -27,19 +27,19 @@
             </a>
          </li>
          <!-- START User avatar toggle-->
-         <!-- <li>
-            Button used to collapse the left sidebar. Only visible on tablet and desktops
+         <li>
+            <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops -->
             <a href="#" ng-click="toggleUserBlock()">
                <em class="icon-user"></em>
             </a>
          </li>
-         END User avatar toggle
-         START lock screen
-         <li ng-controller="LoginController">
-            <a ng-click="logout()"  title="Lock screen">
+         <!-- END User avatar toggle  -->
+         <!-- START lock screen -->
+         <li ng-controller="LoginController as lc">
+            <a ng-click="lc.logout()"  title="Lock screen">
                <em class="icon-lock"></em>
             </a>
-         </li> -->
+         </li>
          <!-- END lock screen-->
       </ul>
       <!-- END Left navbar-->
