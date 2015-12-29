@@ -1,0 +1,63 @@
+(function() {
+    'use strict';
+
+    angular
+        .module('app.user')
+        .factory('UserForm', factory);
+
+    function factory() {
+
+        var getFormFields = function(disabled) {
+
+            var fields = [
+                {
+                    key: 'first_name',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'First Name:',
+                        disabled: disabled,
+                        required: true
+                    }
+                },
+                {
+                    key: 'last_name',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Last Name:',
+                        disabled: disabled
+                    }
+                },                
+                {
+                    key: 'email',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Email:',
+                        type: 'email',
+                        placeholder: 'Enter email',
+                        disabled: disabled
+                    }
+                },
+                {
+                    key: 'role',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Role:',
+                        disabled: disabled
+                    }
+                }
+                
+            ];
+
+            return fields;
+
+        };
+
+        var service = {
+            getFormFields: getFormFields
+        };
+
+        return service;
+
+    }
+
+})();

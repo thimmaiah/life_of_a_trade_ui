@@ -55,14 +55,14 @@ angular.module('app.vendor').controller('SidebarController', ['$rootScope', '$sc
     
     // This is used to show/hide menu based on user permissions    
     $scope.showMenu = function(item) {
-    	if(item.entity && $rootScope.current_user.extended_permissions) {
+    	if(item.entity) {
     		if(item.permissions) {
     			req_perms = item.permissions; 
     		} else {
     			req_perms = "read";
     		}
     		// console.log("Getting permissions for " + item.entity + " : " + item.permissions + " : " + req_perms);
-    		return $rootScope.current_user.extended_permissions[item.entity][req_perms];
+    		return true; //$rootScope.current_user.extended_permissions[item.entity][req_perms];
     	} else {
     		return false;
     	}
@@ -70,11 +70,12 @@ angular.module('app.vendor').controller('SidebarController', ['$rootScope', '$sc
     
     $scope.loadSidebarMenu = function() {
 
-      var menuJson = '/static_data?name=sidebar_menu&',
+      var menuJson = '/app/layout/sidebar-menu.json?name=sidebar_menu&',
           menuURL  = menuJson + 'v=' + (new Date().getTime()); // jumps cache
       $http.get(menuURL)
         .success(function(items) {
            $rootScope.menuItems = items;
+           console.log(items);
         })
         .error(function(data, status, headers, config) {
           alert('Failure loading menu');

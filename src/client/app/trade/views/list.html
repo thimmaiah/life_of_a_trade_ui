@@ -7,7 +7,7 @@
     <div class="panel-body">
 
       <div class="pull-right">
-        <a type="button" class="btn btn-success" href="/trade/create">
+        <a type="button" class="btn btn-success" ui-sref="app.createTrade()">
           <i class="glyphicon glyphicon-open"></i> New Trade
         </a>
       </div>
@@ -25,10 +25,10 @@
               <td data-title="'Team Name'" sortable="'team_name'" filter="{'team_name': 'text'}">{{trade.team_name}}</td>
               <td>
                  <div class="table-actions">
-                      <a class="btn btn-default" title="View" href="/trade/{{trade.id}}">
+                      <a class="btn btn-default" title="View" ui-sref="app.viewTrade({tradeId: trade.id})">
                         <span class="glyphicon glyphicon-eye-open"></span>
                       </a>
-                      <a class="btn btn-default" title="Edit" href="/trade/{{trade.id}}/edit">
+                      <a class="btn btn-default" title="Edit" ui-sref="app.editTrade({tradeId: trade.id})">
                         <span class="glyphicon glyphicon-edit"></span>
                       </a>
                       <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(trade)" item="trade">

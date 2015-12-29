@@ -13,13 +13,13 @@
 
       <hr/>
       <div>
-        <a class="btn btn-success" href="/security/{{vm.security.id}}/edit">
+        <a class="btn btn-success" ui-sref="app.editSecurity({securityId: vm.security.id})">
           <i class="glyphicon glyphicon-edit"></i> Edit
         </a>
         <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.security">
           <i class="glyphicon glyphicon-remove-circle"></i> Delete
         </a>
-        <a class="btn btn-primary" href="/security">
+        <a class="btn btn-primary" ui-sref="app.listSecurity()">
           <i class="glyphicon glyphicon-list"></i> List Securities
         </a>
       </div>

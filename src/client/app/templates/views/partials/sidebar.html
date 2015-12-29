@@ -1,7 +1,7 @@
 <!-- Inline template with sidebar items markup and ng-directives-->
 <script type="text/ng-template" id="sidebar-renderer.html">
    	<span ng-if="item.heading">{{item.text}}</span>
-	<a ui-sref="{{item.sref}}" href="" title="{{item.text}}" ng-if="!item.heading">
+	<a ui-sref="{{item.sref}}" title="{{item.text}}" ng-if="!item.heading">
 	  <em ng-hide="inSubmenu" class="{{item.icon}}"></em>
 	  <div ng-if="item.alert" class="label label-success pull-right">{{item.alert}}</div>
 	  <span>{{item.text}}</span>
@@ -38,19 +38,20 @@
          </li>
          <!-- END user info-->
          <!-- Iterates over all sidebar items-->
-         <!-- <li ng-show="showMenu(item)" ng-class="getMenuItemPropClasses(item)" ng-repeat="item in menuItems" 
+         <li ng-show="showMenu(item)" ng-class="getMenuItemPropClasses(item)" ng-repeat="item in menuItems" 
          	ng-include="'sidebar-renderer.html'" ng-click="toggleCollapse($index)"
-         	ng-show="item.entity"></li>
-          -->
+         	ng-show="item.entity">
+         </li>
+         
           	
-         <li ng-hide="current_user.extended_permissions">         
+         <li ng-hide="current_user">         
          	<a ui-sref="app.login" title="Login" class="ng-scope">
 			<em ng-hide="inSubmenu" class="icon-key"></em>
 			<!-- ngIf: item.alert -->
 			<span class="ng-scope ng-binding">Login</span></a>
 		 </li>
 		 
-		 <li ng-hide="current_user.extended_permissions">         
+		 <li ng-hide="current_user">         
          	<a ui-sref="app.register" title="Register" class="ng-scope">
 			<em ng-hide="inSubmenu" class="icon-user"></em>
 			<!-- ngIf: item.alert -->

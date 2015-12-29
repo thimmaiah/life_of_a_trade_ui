@@ -13,13 +13,13 @@
 
       <hr/>
       <div>
-        <a class="btn btn-success" href="/user/{{vm.user.id}}/edit">
+        <a class="btn btn-success" ui-sref="app.editUser({userId: vm.user.id})">
           <i class="glyphicon glyphicon-edit"></i> Edit
         </a>
         <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.user">
           <i class="glyphicon glyphicon-remove-circle"></i> Delete
         </a>
-        <a class="btn btn-primary" href="/user">
+        <a class="btn btn-primary" ui-sref="app.listUser()">
           <i class="glyphicon glyphicon-list"></i> List Users
         </a>
       </div>

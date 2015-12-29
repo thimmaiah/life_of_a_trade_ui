@@ -1,0 +1,91 @@
+[
+  {
+    "text": "Main Navigation",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Dashboard",
+    "entity": "Dashboard",
+    "sref": "app.dashboard",
+    "icon": "icon-speedometer",
+    "translate": "sidebar.nav.DASHBOARD"
+  },
+  
+  {
+    "text": "Users",
+    "entity": "User",
+    "sref": "app.listUser",
+    "icon": "icon-user",
+    "submenu": [
+      {"text": "List", "sref": "app.listUser", "translate": "sidebar.nav.user.LIST" }    
+     ],
+    "translate": "sidebar.nav.USERS"
+  },
+  {
+    "text": "Securities",
+    "entity": "Security",
+    "sref": "app.listSecurity",
+    "icon": "icon-graph",
+    "submenu": [
+      {"text": "List", "sref": "app.listSecurity", "translate": "sidebar.nav.security.LIST" },
+      {"text": "New",  "sref": "app.createSecurity", "translate": "sidebar.nav.security.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.SECURITIES"
+  },
+  {
+    "text": "Contests",
+    "entity": "Contest",
+    "sref": "app.listContests",
+    "icon": "fa fa-tachometer",
+    "submenu": [
+      {"text": "List", "sref": "app.listContest", "translate": "sidebar.nav.contest.LIST" },
+      {"text": "New",  "sref": "app.createContest", "translate": "sidebar.nav.contest.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.CONTESTS"
+  },
+    {
+    "text": "Customers",
+    "entity": "Customer",
+    "sref": "app.listCustomer",
+    "icon": "fa fa-users",
+    "submenu": [
+      {"text": "List", "sref": "app.listCustomer", "translate": "sidebar.nav.customer.LIST" },
+      {"text": "New",  "sref": "app.createCustomer", "translate": "sidebar.nav.customer.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.CUSTOMERS"
+  },
+  {
+    "text": "Teams",
+    "entity": "Team",
+    "sref": "app.listTeam",
+    "icon": "fa fa-trophy",
+    "submenu": [
+      {"text": "List", "sref": "app.listTeam", "translate": "sidebar.nav.team.LIST" },
+      {"text": "New",  "sref": "app.createTeam", "translate": "sidebar.nav.team.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.TEAMS"
+  },
+  {
+    "text": "Trades",
+    "entity": "Trade",
+    "sref": "app.listTrade",
+    "icon": "fa fa-pencil-square-o",
+    "submenu": [
+      {"text": "List", "sref": "app.listTrade", "translate": "sidebar.nav.trade.LIST" },
+      {"text": "New",  "sref": "app.createTrade", "translate": "sidebar.nav.trade.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.TRADES"
+  },
+  {
+    "text": "Positions",
+    "entity": "Position",
+    "sref": "app.listPosition",
+    "icon": "fa fa-reorder",
+    "submenu": [
+      {"text": "List", "sref": "app.listPosition", "translate": "sidebar.nav.position.LIST" }
+    ],
+    "translate": "sidebar.nav.POSITIONS"
+  }
+  
+  ]
