@@ -87,7 +87,7 @@
                 logger.success('Customer updated');
                 $location.path('customer/' + customer.id);
             }, function(errorResponse) {
-                vm.error = errorResponse.data.summary;
+                vm.error = JSON.stringify(errorResponse);
             });
         };
 

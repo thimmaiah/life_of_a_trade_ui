@@ -113,7 +113,7 @@
 	          .then(function(resp) {
 	        	  console.log(resp); // => {id: 1, ect: '...'}
 	        	  $rootScope.current_user = resp;
-	        	  $state.go("app.listUser");
+	        	  $state.go("app.dashboard");
 	          })
 	          .catch(function(resp) {
 	            // handle error response

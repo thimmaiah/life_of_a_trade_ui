@@ -20,13 +20,21 @@
 							"$state",
 							"$stateParams",
 							"$window",
-							function($rootScope, $state, $stateParams, $window) {
+							"$auth",
+							function($rootScope, $state, $stateParams, $window, $auth) {
 
 								// Set reference to access them from any scope
 								$rootScope.$state = $state;
 								$rootScope.$stateParams = $stateParams;
 								$rootScope.$storage = $window.localStorage;
 								$rootScope.current_user = {};
+								
+								// If the user session is valid, ensure the current_user is set
+								$auth.validateUser().then(function(resp) {
+						        	  console.log(resp); // => {id: 1, ect: '...'}
+						        	  $rootScope.current_user = resp;
+						        	  $state.go("app.listUser");
+						          });
 
 								// Scope Globals
 								// -----------------------------------

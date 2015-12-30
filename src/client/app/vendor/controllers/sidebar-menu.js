@@ -75,7 +75,7 @@ angular.module('app.vendor').controller('SidebarController', ['$rootScope', '$sc
       $http.get(menuURL)
         .success(function(items) {
            $rootScope.menuItems = items;
-           console.log(items);
+           // console.log(items);
         })
         .error(function(data, status, headers, config) {
           alert('Failure loading menu');
