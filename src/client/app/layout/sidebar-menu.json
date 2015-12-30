@@ -78,6 +78,17 @@
     "translate": "sidebar.nav.TRADES"
   },
   {
+    "text": "Orders",
+    "entity": "Order",
+    "sref": "app.listOrder",
+    "icon": "fa fa-bar-chart-o",
+    "submenu": [
+      {"text": "List", "sref": "app.listOrder", "translate": "sidebar.nav.order.LIST" },
+      {"text": "New",  "sref": "app.createOrder", "translate": "sidebar.nav.order.NEW", "permissions": "create" }
+    ],
+    "translate": "sidebar.nav.ORDERS"
+  },
+  {
     "text": "Positions",
     "entity": "Position",
     "sref": "app.listPosition",
