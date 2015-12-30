@@ -1,0 +1,50 @@
+<section class="mainbar">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Order List
+    </div>
+    <div class="panel-body">
+
+      <div class="pull-right">
+        <a type="button" class="btn btn-success" ui-sref="app.createOrder()">
+          <i class="glyphicon glyphicon-plus"></i> New Order
+        </a>
+      </div>
+
+      <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
+          <tr ng-repeat="order in $data">
+           
+          	<td data-title="'Buy_sell'" sortable="'buy_sell'" filter="{ 'buy_sell': 'text' }">{{order.buy_sell}}</td>
+           
+          	<td data-title="'Order_type'" sortable="'order_type'" filter="{ 'order_type': 'text' }">{{order.order_type}}</td>
+           
+          	<td data-title="'User_id'" sortable="'user_id'" filter="{ 'user_id': 'text' }">{{order.user_id}}</td>
+           
+          	<td data-title="'Security_id'" sortable="'security_id'" filter="{ 'security_id': 'text' }">{{order.security_id}}</td>
+           
+          	<td data-title="'Quantity'" sortable="'quantity'" filter="{ 'quantity': 'text' }">{{order.quantity}}</td>
+           
+          	<td data-title="'Price'" sortable="'price'" filter="{ 'price': 'text' }">{{order.price}}</td>
+          
+   
+              <td>
+                 <div class="table-actions">
+                      <a class="btn btn-default" title="View" ui-sref="app.viewOrder({orderId: order.id})">
+                        <span class="icon icon-eye-open"></span>
+                      </a>
+                      <a class="btn btn-default" title="Edit" ui-sref="app.editOrder({orderId: order.id})">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(order)" item="order">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+
+</section>
