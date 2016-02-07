@@ -1,0 +1,56 @@
+<section class="mainbar">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      MarketEvent List
+    </div>
+    <div class="panel-body">
+
+      <div class="pull-right">
+        <a type="button" class="btn btn-success" ui-sref="app.createMarketEvent()">
+          <i class="glyphicon glyphicon-open"></i> New MarketEvent
+        </a>
+      </div>
+
+      <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
+          <tr ng-repeat="marketEvent in $data">
+           
+          	<td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">{{marketEvent.name}}</td>
+           
+          	<td data-title="'Event_type'" sortable="'event_type'" filter="{ 'event_type': 'text' }">{{marketEvent.event_type}}</td>
+           
+          	<td data-title="'Summary'" sortable="'summary'" filter="{ 'summary': 'text' }">{{marketEvent.summary}}</td>
+                      
+          	<td data-title="'Direction'" sortable="'direction'" filter="{ 'direction': 'text' }">{{marketEvent.direction}}</td>
+           
+          	<td data-title="'Intensity'" sortable="'intensity'" filter="{ 'intensity': 'text' }">{{marketEvent.intensity}}</td>
+           
+          	<td data-title="'Asset_class'" sortable="'asset_class'" filter="{ 'asset_class': 'text' }">{{marketEvent.asset_class}}</td>
+           
+          	<td data-title="'Region'" sortable="'region'" filter="{ 'region': 'text' }">{{marketEvent.region}}</td>
+           
+          	<td data-title="'Sector'" sortable="'sector'" filter="{ 'sector': 'text' }">{{marketEvent.sector}}</td>
+           
+          	<td data-title="'Ticker'" sortable="'ticker'" filter="{ 'ticker': 'text' }">{{marketEvent.ticker}}</td>
+           
+          	
+              <td>
+                 <div class="table-actions">
+                      <a class="btn btn-default" title="View" ui-sref="app.viewMarketEvent({marketEventId: marketEvent.id})">
+                        <span class="glyphicon glyphicon-file"></span>
+                      </a>
+                      <a class="btn btn-default" title="Edit" ui-sref="app.editMarketEvent({marketEventId: marketEvent.id})">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(marketEvent)" item="marketEvent">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+
+</section>

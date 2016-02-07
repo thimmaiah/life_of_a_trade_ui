@@ -42,7 +42,13 @@
                     type: 'input',
                     templateOptions: {
                         label: 'Role:',
-                        disabled: disabled
+                        disabled: disabled,
+                        options: [
+                          {name: 'Admin', value: 'Admin'},
+                          {name: 'Trader', value: 'Trader'},
+                          {name: 'Ops', value: 'Ops'},
+                          {name: 'Simulation', value: 'Simulation'}
+                        ]
                     }
                 }
                 

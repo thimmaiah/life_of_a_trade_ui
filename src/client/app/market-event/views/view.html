@@ -1,0 +1,30 @@
+<section class="mainbar" data-ng-init="vm.toViewMarketEvent()">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+			MarketEvent View
+    </div>
+    <div class="panel-body">
+
+      <form novalidate>
+        <formly-form model="vm.marketEvent" fields="vm.formFields">
+        </formly-form>
+      </form>
+
+      <hr/>
+      <div>
+        <a class="btn btn-success" ui-sref="app.editMarketEvent({marketEventId: vm.marketEvent.id})">
+          <i class="glyphicon glyphicon-pencil"></i> Edit
+        </a>
+        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.marketEvent">
+          <i class="glyphicon glyphicon-remove-circle"></i> Delete
+        </a>
+        <a class="btn btn-primary" ui-sref="app.listMarketEvent()">
+          <i class="glyphicon glyphicon-list"></i> List MarketEvents
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>

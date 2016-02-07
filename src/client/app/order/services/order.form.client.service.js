@@ -25,6 +25,20 @@
                         ]
 	                }
 	            },
+	            
+	            {
+	                key: 'exchange',
+	                type: 'select',
+	                templateOptions: {
+	                    label: 'Exchange:',
+	                    disabled: disabled,
+	                    required: true,
+	                    options: [
+                          {name: 'Nyse', value: 'NYSE'},
+                          {name: 'Nasdaq', value: 'NASDAQ'}
+                        ]
+	                }
+	            },
 	             
 	            {
 	                key: 'order_type',
@@ -72,6 +86,16 @@
 	                    type: 'number'
 	                }
 	            },
+	            
+	            {
+	                key: 'unfilled_qty',
+	                type: 'input',
+	                templateOptions: {
+	                    label: 'Unfilled Quantity:',
+	                    disabled: disabled,
+	                    type: 'number'
+	                }
+	            },
 	             
 	            {
 	                key: 'price',
@@ -83,6 +107,27 @@
 	                    type: 'number'
 	                }
 	            },
+	            
+	            {
+	                key: 'pre_trade_check_status',
+	                type: 'input',
+	                templateOptions: {
+	                    label: 'Pre Trade:',
+	                    disabled: disabled,
+	                    required: false,
+	                    hidden: true
+	                }
+	            },
+	            {
+	                key: 'trade_status',
+	                type: 'input',
+	                templateOptions: {
+	                    label: 'Status:',
+	                    disabled: disabled,
+	                    required: false,
+	                    hidden: true
+	                }
+	            }
 	            
 
             ];

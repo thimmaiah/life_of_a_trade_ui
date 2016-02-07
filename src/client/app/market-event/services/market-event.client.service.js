@@ -3,15 +3,15 @@
     'use strict';
 
     angular
-        .module('app.position')
-        .factory('Position', Position);
+        .module('app.marketEvent')
+        .factory('MarketEvent', MarketEvent);
 
-    Position.$inject = ['$resource', 'API_BASE_URL'];
+    MarketEvent.$inject = ['$resource', 'SPRAY_API_BASE_URL'];
     /* @ngInject */
-    function Position($resource, API_BASE_URL) {
+    function MarketEvent($resource, SPRAY_API_BASE_URL) {
 
         var params = {
-            positionId: '@id',
+            marketEventId: '@id',
             format: 'json'
         };
 
@@ -24,7 +24,7 @@
             }
         };
 
-        var API_URL = API_BASE_URL + '/positions/:positionId';
+        var API_URL = SPRAY_API_BASE_URL + '/market_events/:marketEventId';
 
         return $resource(API_URL, params, actions);
 

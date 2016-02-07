@@ -7,30 +7,31 @@
     <div class="panel-body">
 
       <div class="pull-right">
-        <a type="button" class="btn btn-success" href="/position/create">
-          <i class="glyphicon glyphicon-plus"></i> New Position
+        <a type="button" class="btn btn-success" ui-sref="app.createPosition()">
+          <i class="glyphicon glyphicon-open"></i> New Position
         </a>
       </div>
 
       <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
           <tr ng-repeat="position in $data">
-
-              <td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{trade.id}}</td>
-              <td data-title="'Quantity'" sortable="'quantity'" filter="{'quantity': 'text'}">{{trade.quantity}}</td>
-              <td data-title="'Price'" sortable="'price'" filter="{'price': 'text'}">{{trade.price}}</td>
-              <td data-title="'Ticker'" sortable="'security_ticker'" filter="{'security_ticker': 'text'}">{{trade.security_ticker}}</td>
-			  <td data-title="'Team Name'" sortable="'team_name'" filter="{'team_name': 'text'}">{{trade.team_name}}</td>
-              
+           
+          	<td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{position.id}}</td>
+           
+          	<td data-title="'Ticker'" sortable="'ticker'" filter="{ 'ticker': 'text' }">{{position.ticker}}</td>
+            
+          	<td data-title="'Quantity'" sortable="'quantity'" filter="{ 'quantity': 'text' }">{{position.quantity}}</td>
+           
+          	<td data-title="'Average_price'" sortable="'average_price'" filter="{ 'average_price': 'text' }">{{position.average_price}}</td>
+           
+          	<td data-title="'Pnl'" sortable="'pnl'" filter="{ 'pnl': 'text' }">{{position.pnl}}</td>
+           
+          	<td data-title="'Updated_at'" sortable="'updated_at'" filter="{ 'updated_at': 'text' }">{{position.updated_at}}</td>
+          
+   
               <td>
                  <div class="table-actions">
-                      <a class="btn btn-default" title="View" href="/position/{{position.id}}">
+                      <a class="btn btn-default" title="View" ui-sref="app.viewPosition({positionId: position.id})">
                         <span class="glyphicon glyphicon-file"></span>
-                      </a>
-                      <a class="btn btn-default" title="Edit" href="/position/{{position.id}}/edit">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </a>
-                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(position)" item="position">
-                        <span class="glyphicon glyphicon-trash"></span>
                       </a>
                   </div>
               </td>
