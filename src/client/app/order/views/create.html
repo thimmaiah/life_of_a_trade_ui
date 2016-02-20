@@ -8,6 +8,19 @@
 
       <form data-ng-submit="vm.create()" novalidate>
 
+		<div class="form-group" ng-controller="SecuritiesSearchCtrl as ssc">
+			<label class="control-label"> Security * </label> <input type="text"
+				name="order[security_ticker]" ng-model="vm.order.security_ticker"
+				class="text_field form-control"
+				placeholder="Search using ticket, name, sector or asset class"
+				typeahead="security.name for security in ssc.search($viewValue)"
+				typeahead-loading="loadingSecurities" required
+				typeahead-min-length="3"
+				typeahead-on-select="vm.selectSecurity($item, $model, $label)">
+			<i ng-show="loadingSecurities" class="glyphicon glyphicon-refresh"></i>
+	
+		</div>
+		
         <formly-form model="vm.order" fields="vm.formFields" form="vm.form">
         </formly-form>
 

@@ -57,24 +57,15 @@
 	            {
 	                key: 'user_id',
 	                type: 'input',
+	                className: 'display-none',
 	                templateOptions: {
 	                    label: 'User_id:',
 	                    disabled: disabled,
-	                    required: true,
 	                    type: 'number'
 	                }
+	            	
 	            },
-	             
-	            {
-	                key: 'security_id',
-	                type: 'input',
-	                templateOptions: {
-	                    label: 'Security_id:',
-	                    disabled: disabled,
-	                    required: true,
-	                    type: 'number'
-	                }
-	            },
+	            
 	             
 	            {
 	                key: 'quantity',
@@ -90,6 +81,7 @@
 	            {
 	                key: 'unfilled_qty',
 	                type: 'input',
+	                className: 'display-none',
 	                templateOptions: {
 	                    label: 'Unfilled Quantity:',
 	                    disabled: disabled,
@@ -103,24 +95,32 @@
 	                templateOptions: {
 	                    label: 'Price:',
 	                    disabled: disabled,
-	                    required: true,
+	                    required: false,
 	                    type: 'number'
+	                },
+	                expressionProperties: {
+	                    hide: function($viewValue, $modelValue, scope) {
+	                    	console.log("hide called: " + scope.model.order_type);
+					        return !(scope.model.order_type && scope.model.order_type === 'LIMIT');
+					    }
 	                }
+	               
 	            },
 	            
 	            {
 	                key: 'pre_trade_check_status',
-	                type: 'input',
+	                type: 'input',     	             
+                    className: 'display-none',
 	                templateOptions: {
-	                    label: 'Pre Trade:',
+	                    label: 'Pre Trade:',		                
 	                    disabled: disabled,
-	                    required: false,
-	                    hidden: true
+	                    required: false
 	                }
 	            },
 	            {
 	                key: 'trade_status',
 	                type: 'input',
+	                className: 'display-none',
 	                templateOptions: {
 	                    label: 'Status:',
 	                    disabled: disabled,

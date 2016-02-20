@@ -84,6 +84,11 @@
             vm.order = Order.get({orderId: $stateParams.orderId});
             vm.setFormFields(false);
         };
+        
+        vm.selectSecurity = function(item, model, label) {
+      	  console.log(item);
+      	  vm.order.security_id = item.id;
+      	};
 
         activate();
 
