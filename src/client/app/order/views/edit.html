@@ -8,6 +8,13 @@
 
       <form data-ng-submit="vm.update()" novalidate>
 
+		<div class="form-group">
+			<label class="control-label"> Security * </label> 
+			<input type="text" disabled="disabled"
+				name="order[ticker]" ng-model="vm.order.ticker"
+				class="text_field form-control">
+		</div>
+		
         <formly-form model="vm.order" fields="vm.formFields" form="vm.form">
         </formly-form>
 

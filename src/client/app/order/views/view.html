@@ -1,30 +1,36 @@
 <section class="mainbar" data-ng-init="vm.toViewOrder()">
 
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-			Order View
-    </div>
-    <div class="panel-body">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Order View</div>
+		<div class="panel-body">
 
-      <form novalidate>
-        <formly-form model="vm.order" fields="vm.formFields">
-        </formly-form>
-      </form>
+			<form novalidate>
+				<div class="form-group">
+					<label class="control-label"> Security * </label> 
+					<input
+						type="text" disabled="disabled" name="order[ticker]"
+						ng-model="vm.order.ticker" class="text_field form-control">
+				</div>
 
-      <hr/>
-      <div>
-        <a class="btn btn-success" ui-sref="app.editOrder({orderId: vm.order.id})">
-          <i class="glyphicon glyphicon-pencil"></i> Edit
-        </a>
-        <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove()" item="vm.order">
-          <i class="glyphicon glyphicon-trash"></i> Delete
-        </a>
-        <a class="btn btn-primary" ui-sref="app.listOrder()">
-          <i class="glyphicon glyphicon-list"></i> List Orders
-        </a>
-      </div>
+				<formly-form model="vm.order" fields="vm.formFields">
+				</formly-form>
+			</form>
 
-    </div>
-  </div>
+			<hr />
+			<div>
+				<a class="btn btn-success"
+					ui-sref="app.editOrder({orderId: vm.order.id})"> <i
+					class="glyphicon glyphicon-pencil"></i> Edit
+				</a> <a class="btn btn-danger" title="Remove"
+					ng-really-message="Are you sure ?" ng-really-click="vm.remove()"
+					item="vm.order"> <i class="glyphicon glyphicon-trash"></i>
+					Delete
+				</a> <a class="btn btn-primary" ui-sref="app.listOrder()"> <i
+					class="glyphicon glyphicon-list"></i> List Orders
+				</a>
+			</div>
+
+		</div>
+	</div>
 
 </section>

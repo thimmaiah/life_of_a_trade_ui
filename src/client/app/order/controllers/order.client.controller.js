@@ -88,6 +88,7 @@
         vm.selectSecurity = function(item, model, label) {
       	  console.log(item);
       	  vm.order.security_id = item.id;
+      	  vm.order.ticker = item.ticker;
       	};
 
         activate();
