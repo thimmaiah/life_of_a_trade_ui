@@ -33,17 +33,6 @@
     ],
     "translate": "sidebar.nav.SECURITIES"
   },
-  {
-    "text": "Contests",
-    "entity": "Contest",
-    "sref": "app.listContests",
-    "icon": "fa fa-tachometer",
-    "submenu": [
-      {"text": "List", "sref": "app.listContest", "translate": "sidebar.nav.contest.LIST" },
-      {"text": "New",  "sref": "app.createContest", "translate": "sidebar.nav.contest.NEW", "permissions": "create" }
-    ],
-    "translate": "sidebar.nav.CONTESTS"
-  },
     {
     "text": "Customers",
     "entity": "Customer",
@@ -54,17 +43,6 @@
       {"text": "New",  "sref": "app.createCustomer", "translate": "sidebar.nav.customer.NEW", "permissions": "create" }
     ],
     "translate": "sidebar.nav.CUSTOMERS"
-  },
-  {
-    "text": "Teams",
-    "entity": "Team",
-    "sref": "app.listTeam",
-    "icon": "fa fa-trophy",
-    "submenu": [
-      {"text": "List", "sref": "app.listTeam", "translate": "sidebar.nav.team.LIST" },
-      {"text": "New",  "sref": "app.createTeam", "translate": "sidebar.nav.team.NEW", "permissions": "create" }
-    ],
-    "translate": "sidebar.nav.TEAMS"
   },
   {
     "text": "Trades",

@@ -6,9 +6,9 @@
         .module('app.position')
         .factory('Position', Position);
 
-    Position.$inject = ['$resource', 'API_BASE_URL'];
+    Position.$inject = ['$resource', 'SPRAY_API_BASE_URL'];
     /* @ngInject */
-    function Position($resource, API_BASE_URL) {
+    function Position($resource, SPRAY_API_BASE_URL) {
 
         var params = {
             positionId: '@id',
@@ -24,7 +24,7 @@
             }
         };
 
-        var API_URL = API_BASE_URL + '/positions/:positionId';
+        var API_URL = SPRAY_API_BASE_URL + '/positions/:positionId';
 
         return $resource(API_URL, params, actions);
 

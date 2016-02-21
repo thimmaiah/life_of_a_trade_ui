@@ -51,11 +51,6 @@
         "NEW": "New",
         "LOGIN": "Login"
       },
-      "TEAMS": "Teams",
-      "team": {        
-        "LIST": "List",
-        "NEW": "New"
-      },
       "TRADES": "Trades",
       "trade": {        
         "LIST": "List",
@@ -63,11 +58,6 @@
       },
       "POSITIONS": "Positions",
       "position": {        
-        "LIST": "List",
-        "NEW": "New"
-      },
-      "CONTESTS": "Contests",
-      "contest": {        
         "LIST": "List",
         "NEW": "New"
       },
