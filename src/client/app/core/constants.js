@@ -8,6 +8,7 @@
 			.constant('moment', moment)
 			.constant('API_BASE_URL', 'http://localhost:3000')
 			.constant('SPRAY_API_BASE_URL', 'http://localhost:8000')
+			.constant('FAYE_URL', 'http://localhost:9292')
 			.constant('APP_COLORS', {
 				'primary' : '#5d9cec',
 				'success' : '#27c24c',

@@ -4,10 +4,10 @@
 	angular.module('app.order').controller('OrderController', OrderController);
 
 	OrderController.$inject = [ 'logger', '$stateParams', '$location',
-			'$state', 'Order', 'TableSettings', 'OrderForm' ];
+			'$state', 'Order', 'TableSettings', 'OrderForm', 'Faye' ];
 	/* @ngInject */
 	function OrderController(logger, $stateParams, $location, $state, Order,
-			TableSettings, OrderForm) {
+			TableSettings, OrderForm, Faye) {
 
 		var vm = this;
 
@@ -86,7 +86,7 @@
 		}
 
 		vm.successResponse = function(response) {
-			
+
 		}
 
 		vm.toEditOrder = function() {
@@ -105,7 +105,8 @@
 		activate();
 
 		function activate() {
-			// logger.info('Activated Order View');
+			
+
 		}
 	}
 

@@ -5,7 +5,8 @@
         'app.core',
         'app.widgets',
         'app.layout',
-        'app.vendor'
+        'app.vendor',
+        'faye'
     ]);
 
 })();

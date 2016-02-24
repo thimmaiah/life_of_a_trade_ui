@@ -10,14 +10,16 @@
         '$state',
         'MarketEvent',
         'TableSettings',
-        'MarketEventForm'];
+        'MarketEventForm',
+        'Faye'];
     /* @ngInject */
     function MarketEventController(logger,
         $stateParams,
         $state,
         MarketEvent,
         TableSettings,
-        MarketEventForm) {
+        MarketEventForm,
+        Faye) {
 
         var vm = this;
 
@@ -79,20 +81,38 @@
 
         // Ensure form fields are set for view and edit
         vm.toViewMarketEvent = function() {
-            vm.marketEvent = MarketEvent.get({marketEventId: $stateParams.marketEventId});
+            vm.marketEvent = MarketEvent.get({marketEventId: $stateParams.marketEventId}, vm.successResponse, vm.errorResponse);
             vm.setFormFields(true);
         };
 
         vm.toEditMarketEvent = function() {
-            vm.marketEvent = MarketEvent.get({marketEventId: $stateParams.marketEventId});
+            vm.marketEvent = MarketEvent.get({marketEventId: $stateParams.marketEventId}, vm.successResponse, vm.errorResponse);
             vm.setFormFields(false);
         };
+        
+        vm.errorResponse = function(response) {
+			// Error
+			if (response.status === 404) {
+				logger.error("Not found");
+			} else if (response.status === 403) {
+				logger.error("No access");
+			} else {
+				logger.error("Error: " + response);
+			}
+		}
+
+		vm.successResponse = function(response) {
+
+		}
+
 
         // Called to initialize the controller
         activate();
 
         function activate() {
-            logger.info('Activated MarketEvent View');
+			Faye.subscribe("/triggered_events", function(msg) {
+				logger.info(JSON.stringify(msg));
+			});
         }
     }
 
