@@ -27,8 +27,9 @@
 							"$stateParams",
 							"$window",
 							"$auth",
-							function($rootScope, $state, $stateParams, $window,
-									$auth) {
+							"Faye",
+							"logger",
+							function($rootScope, $state, $stateParams, $window,	$auth, Faye, logger) {
 
 								// Set reference to access them from any scope
 								$rootScope.$state = $state;
@@ -59,6 +60,15 @@
 									},
 									viewAnimation : 'ng-fadeInUp'
 								};
+								
+								
+								Faye.subscribe("/triggered_events", function(msg) {
+									logger.info("triggered_events: " + JSON.stringify(msg));
+								});
+								
+								Faye.subscribe("/pricing_events", function(msg) {
+									logger.info("pricing_events: " + JSON.stringify(msg));
+								});
 
 							} ]);
 

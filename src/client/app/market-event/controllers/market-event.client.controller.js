@@ -110,9 +110,7 @@
         activate();
 
         function activate() {
-			Faye.subscribe("/triggered_events", function(msg) {
-				logger.info(JSON.stringify(msg));
-			});
+			
         }
     }
 
