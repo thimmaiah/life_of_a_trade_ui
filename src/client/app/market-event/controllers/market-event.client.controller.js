@@ -9,6 +9,7 @@
         '$stateParams',
         '$state',
         'MarketEvent',
+        'TriggeredEvent',
         'TableSettings',
         'MarketEventForm',
         'Faye'];
@@ -17,6 +18,7 @@
         $stateParams,
         $state,
         MarketEvent,
+        TriggeredEvent,
         TableSettings,
         MarketEventForm,
         Faye) {
@@ -43,6 +45,23 @@
             marketEvent.$save(function(response) {
                 logger.success('MarketEvent created');
                 $state.go("app.viewMarketEvent", {'marketEventId': response.id});
+            }, function(errorResponse) {
+                vm.error = errorResponse;
+            });
+        };
+        
+        // Trigger MarketEvent        
+        vm.trigger = function(marketEvent) {
+            // Create new TriggeredEvent object
+        	console.log("triggering event " + JSON.stringify(marketEvent));
+        	var triggered_event = {}
+        	triggered_event.market_event_id = marketEvent.id;
+            var te = new TriggeredEvent(triggered_event);
+
+            // Redirect after save
+            te.$save(function(response) {
+                logger.success('MarketEvent triggered');
+                $state.go("app.viewTriggeredEvent", {'triggeredEventId': response.id});
             }, function(errorResponse) {
                 vm.error = errorResponse;
             });

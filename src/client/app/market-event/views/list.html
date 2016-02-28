@@ -42,7 +42,11 @@
                       <a class="btn btn-default" title="Edit" ui-sref="app.editMarketEvent({marketEventId: marketEvent.id})">
                         <span class="glyphicon glyphicon-pencil"></span>
                       </a>
-                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(marketEvent)" item="marketEvent">
+                      <a class="btn btn-danger" title="Remove" ng-really-message="Delete Event Are you sure ?" ng-really-click="vm.remove(marketEvent)" item="marketEvent">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                      
+                      <a class="btn btn-danger" title="Trigger" ng-really-message="Trigger Event. Are you sure ?" ng-really-click="vm.trigger(marketEvent)" item="marketEvent">
                         <span class="glyphicon glyphicon-remove-circle"></span>
                       </a>
                   </div>
