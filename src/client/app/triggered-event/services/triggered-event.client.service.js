@@ -19,6 +19,11 @@
             update: {
                 method: 'PUT'
             },
+            sendToSimulator: {
+                method: 'POST',
+            	url: SPRAY_API_BASE_URL + "/triggered_events/simulate",
+            	params: {}
+            },
             delete: {
                 method: 'DELETE'
             }

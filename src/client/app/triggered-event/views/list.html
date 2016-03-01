@@ -13,24 +13,22 @@
       </div>
 
       <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
-          <tr ng-repeat="triggeredEvent in $data">
+          <tr ng-repeat="event in $data">
            
-          	<td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{triggeredEvent.id}}</td>
+          	<td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{event.triggeredEvent.id}}</td>
+            
+          	<td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">{{event.marketEvent.name}}</td>
            
-          	<td data-title="'Market_event_id'" sortable="'market_event_id'" filter="{ 'market_event_id': 'text' }">{{triggeredEvent.market_event_id}}</td>
+          	<td data-title="'Event_type'" sortable="'event_type'" filter="{ 'event_type': 'text' }">{{event.marketEvent.event_type}}</td>
            
-          	<td data-title="'Sent_to_sim'" sortable="'sent_to_sim'" filter="{ 'sent_to_sim': 'text' }">{{triggeredEvent.sent_to_sim}}</td>
+          	<td data-title="'Summary'" sortable="'summary'" filter="{ 'summary': 'text' }">{{event.marketEvent.summary}}</td>
+
+          	<td data-title="'Sent_to_sim'" sortable="'sent_to_sim'" filter="{ 'sent_to_sim': 'text' }">{{event.triggeredEvent.sent_to_sim}}</td>
           
    
               <td>
                  <div class="table-actions">
-                      <a class="btn btn-default" title="View" ui-sref="app.viewTriggeredEvent({triggeredEventId: triggeredEvent.id})">
-                        <span class="glyphicon glyphicon-file"></span>
-                      </a>
-                      <a class="btn btn-default" title="Edit" ui-sref="app.editTriggeredEvent({triggeredEventId: triggeredEvent.id})">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </a>
-                      <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="vm.remove(triggeredEvent)" item="triggeredEvent">
+                      <a class="btn btn-danger" title="Send to Simulator" ng-really-message="Send to Simulator: Are you sure ?" ng-really-click="vm.sendToSimulator(event.triggeredEvent)" item="event.triggeredEvent">
                         <span class="glyphicon glyphicon-remove-circle"></span>
                       </a>
                   </div>
